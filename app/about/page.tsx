@@ -103,7 +103,7 @@ function TeamCard({ member }: { member: TeamMember }) {
         {/* LinkedIn Icon */}
         <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
           <Link
-            href="https://www.linkedin.com/company/synctom/"
+            href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
