@@ -4,6 +4,8 @@ import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react
 import Image from "next/image";
 import Link from "next/link";
 
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'help@synctom.com';
+
 const quickLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
@@ -109,7 +111,7 @@ export default function Footer() {
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-center text-sm sm:text-base text-gray-600">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-gray-400 shrink-0" />
-                <span className="break-all">help@synctom.com</span>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="break-all hover:underline">{CONTACT_EMAIL}</a>
               </div>
               <div className="flex items-center text-sm sm:text-base text-gray-600">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-gray-400 shrink-0" />

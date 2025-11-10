@@ -18,6 +18,7 @@ export default function ContactSection() {
     projectType: "",
     message: "",
   });
+  const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'help@synctom.com';
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -231,7 +232,7 @@ export default function ContactSection() {
           Ready to Build Your Digital Future?
         </h2>
         <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-4 sm:mb-6 max-w-xs sm:max-w-sm">
-          Let's discuss your project and turn your ambitious ideas into
+          Lets discuss your project and turn your ambitious ideas into
           scalable, beautiful software.
         </p>
         <Button asChild variant="default" className="w-fit mb-6 sm:mb-8 text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
@@ -241,16 +242,13 @@ export default function ContactSection() {
         <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
           <div className="flex items-center gap-2 sm:gap-3">
             <Mail className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
-            <span>info@syntom.com</span>
+            <span>{CONTACT_EMAIL}</span>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <Phone className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
             <span>+92 300 1234567</span>
           </div>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Mail className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
-            <span>info@syntom.com</span>
-          </div>
+          
         </div>
       </div>
     </section>

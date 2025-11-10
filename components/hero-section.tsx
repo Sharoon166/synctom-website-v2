@@ -15,7 +15,7 @@ export default function SynctomLanding() {
     <div className="overflow-hidden relative">
       {/* Animated Floating Icons with Flower Bloom Effect - Responsive */}
       <motion.div
-        className="absolute shadow-lg rotate-15 top-8 left-4 sm:top-15 sm:left-40 z-0"
+        className="absolute rotate-15 top-8 left-4 sm:top-15 sm:left-40 z-0"
         initial={{
           x: "calc(50vw - 160px)",
           y: "calc(16rem + 8rem + 3rem)",
@@ -39,7 +39,7 @@ export default function SynctomLanding() {
         }}
       >
         <Image
-          src="/herosection/figma.png"
+          src="/herosection/figma.svg"
           alt="Figma"
           width={30}
           height={36}
@@ -69,7 +69,7 @@ export default function SynctomLanding() {
         }}
       >
         <Image
-          src="/herosection/javascripy.png"
+          src="/herosection/javascript.svg"
           alt="JavaScript"
           width={30}
           height={30}

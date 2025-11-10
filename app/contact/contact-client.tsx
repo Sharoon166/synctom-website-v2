@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/accordion";
 import CTASection from "@/components/cta-section";
 
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'help@synctom.com';
+
 export default function ContactClient() {
   const [formData, setFormData] = useState({
     inquiryPurpose: "",
@@ -113,7 +115,7 @@ export default function ContactClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Let's Build Something Great Together
+              Lets Build Something Great Together
             </motion.h1>
 
             {/* Description */}
@@ -123,7 +125,7 @@ export default function ContactClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              We'd love to hear about your project or idea. Whether you're
+              We would love to hear about your project or idea. Whether you are
               looking for design, development, or a complete digital solution,
               our team is ready to help you get started.
             </motion.p>
@@ -167,9 +169,9 @@ export default function ContactClient() {
                 />
               </div>
               <div>
-                <p className="text-sm sm:text-base text-gray-600">
-                  help@synctom.com
-                </p>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm sm:text-base text-gray-600 hover:underline">
+                  {CONTACT_EMAIL}
+                </a>
               </div>
             </div>
 
@@ -503,7 +505,7 @@ export default function ContactClient() {
             {submitStatus === 'success' && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-md">
                 <p className="text-green-800 text-sm">
-                  Thank you! Your message has been sent successfully. We'll get back to you soon.
+                  Thank you! Your message has been sent successfully. We will get back to you soon.
                 </p>
               </div>
             )}
@@ -511,7 +513,7 @@ export default function ContactClient() {
             {submitStatus === 'error' && (
               <div className="p-4 bg-red-50 border border-red-200 rounded-md">
                 <p className="text-red-800 text-sm">
-                  Sorry, there was an error sending your message. Please try again or contact us directly.
+                  Sorry, there was an error sending your message. Please try again or contact us directly at {CONTACT_EMAIL} .
                 </p>
               </div>
             )}
@@ -622,7 +624,7 @@ export default function ContactClient() {
                   Still have questions?
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Contact our support team and we'll make sure everything is
+                  Contact our support team and we will make sure everything is
                   clear and helpful.
                 </p>
                 <Button asChild variant={"default"}>
