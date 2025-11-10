@@ -17,10 +17,15 @@ export default function ContactClient() {
   const [formData, setFormData] = useState({
     inquiryPurpose: "",
     description: "",
+    firstName: "",
+    lastName: "",
     fullName: "",
     email: "",
     organization: "",
+    companyName: "",
     phoneNumber: "",
+    budget: "",
+    projectType: "",
     message: "",
   });
 
@@ -58,10 +63,15 @@ export default function ContactClient() {
         setFormData({
           inquiryPurpose: "",
           description: "",
+          firstName: "",
+          lastName: "",
           fullName: "",
           email: "",
           organization: "",
+          companyName: "",
           phoneNumber: "",
+          budget: "",
+          projectType: "",
           message: "",
         });
       } else {
@@ -298,26 +308,48 @@ export default function ContactClient() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              {/* Full Name */}
+              {/* First Name */}
               <div className="space-y-1 sm:space-y-2">
                 <label
-                  htmlFor="fullName"
+                  htmlFor="firstName"
                   className="block text-xs sm:text-sm font-medium text-gray-700"
                 >
-                  Full Name<span className="text-red-500">*</span>
+                  First Name<span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="fullName"
-                  name="fullName"
+                  id="firstName"
+                  name="firstName"
                   type="text"
-                  placeholder="Enter Full Name"
-                  value={formData.fullName}
+                  placeholder="Enter First Name"
+                  value={formData.firstName}
                   onChange={handleInputChange}
                   className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
                   required
                 />
               </div>
 
+              {/* Last Name */}
+              <div className="space-y-1 sm:space-y-2">
+                <label
+                  htmlFor="lastName"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
+                >
+                  Last Name<span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  placeholder="Enter Last Name"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {/* Email Address */}
               <div className="space-y-1 sm:space-y-2">
                 <label
@@ -337,56 +369,110 @@ export default function ContactClient() {
                   required
                 />
               </div>
+
+              {/* Budget */}
+              <div className="space-y-1 sm:space-y-2">
+                <label
+                  htmlFor="budget"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
+                >
+                  Budget<span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="budget"
+                  name="budget"
+                  type="text"
+                  placeholder="e.g. $5000"
+                  value={formData.budget}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
+                  required
+                />
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Organization */}
-              <div className="space-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {/* Company Name */}
+              <div className="space-y-1 sm:space-y-2">
+                <label
+                  htmlFor="companyName"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
+                >
+                  Company Name<span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="companyName"
+                  name="companyName"
+                  type="text"
+                  placeholder="Enter Company Name"
+                  value={formData.companyName}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
+                  required
+                />
+              </div>
+
+              {/* Organization (Optional) */}
+              <div className="space-y-1 sm:space-y-2">
                 <label
                   htmlFor="organization"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
                 >
-                  Organization<span className="text-red-500">*</span>
+                  Organization
                 </label>
                 <input
                   id="organization"
                   name="organization"
                   type="text"
-                  placeholder="Enter your Organization"
+                  placeholder="Enter your Organization (Optional)"
                   value={formData.organization}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400"
+                  className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {/* Project Type */}
+              <div className="space-y-1 sm:space-y-2">
+                <label
+                  htmlFor="projectType"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
+                >
+                  Project Type<span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="projectType"
+                  name="projectType"
+                  type="text"
+                  placeholder="Web App, Mobile App, UI/UX Design..."
+                  value={formData.projectType}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
                   required
                 />
               </div>
 
               {/* Phone Number */}
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <label
                   htmlFor="phoneNumber"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
                 >
                   Phone Number<span className="text-red-500">*</span>
                 </label>
                 <div className="flex">
-                  <div className="flex items-center px-3 border border-r-0 border-gray-300 bg-gray-50 rounded-l-md">
-                    <Image
-                      src="/contact/pakistan-flag.svg"
-                      alt="Pakistan flag"
-                      width={20}
-                      height={15}
-                      className="mr-2"
-                    />
-                    <span className="text-sm text-gray-600">+92</span>
+                  <div className="flex items-center px-3 border border-r-0 border-gray-300 bg-gray-50 rounded-l-md text-xs sm:text-sm">
+                    🇵🇰 +92
                   </div>
                   <input
                     id="phoneNumber"
                     name="phoneNumber"
                     type="tel"
-                    placeholder="Enter Phone Number"
+                    placeholder="3001234567"
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-r-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400"
+                    className="flex-1 px-3 py-2 sm:py-3 border border-gray-300 rounded-r-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
                     required
                   />
                 </div>
@@ -456,7 +542,7 @@ export default function ContactClient() {
               {/* Category Buttons */}
               <div className="space-y-4">
                 <div className="flex flex-wrap gap-3">
-                  <Button className="bg-gradient-to-r from-[#0383CA] to-pink-500 text-white">
+                  <Button className="bg-linear-to-r from-[#0383CA] to-pink-500 text-white">
                     Getting Started
                   </Button>
                   <Button variant="gradient">Pricing & Budget</Button>
