@@ -54,7 +54,7 @@ const galleryImages = [
 export default function ServicesSection() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 720);
@@ -128,14 +128,14 @@ export default function ServicesSection() {
           </div>
 
           {/* Text and Buttons - Now appears second on mobile/tablet */}
-          <div className="shrink-0 flex flex-col justify-center w-full md:max-w-md lg:max-w-xl order-2 md:order-1">
-            <p className="text-sm text-blue-400 mb-2 tracking-wide">
+          <div className="shrink-0 flex flex-col sm:items-start items-center justify-center w-full md:max-w-md lg:max-w-xl order-2 md:order-1">
+            <p className="text-sm text-blue-400  mb-2 tracking-wide">
               Our Services
             </p>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl  sm:text-start text-center sm:text-3xl font-semibold text-gray-900 mb-4">
               Transforming Ideas into Scalable Digital Solutions
             </h2>
-            <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
+            <p className="text-gray-600 sm:text-start text-center mb-6 sm:mb-8 text-sm sm:text-base">
               From design to development, synctom provides end-to-end digital
               solutions that empower brands and startups to thrive. Our
               multidisciplinary team blends creativity with technology to
